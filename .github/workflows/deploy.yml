@@ -18,13 +18,13 @@ jobs:
           node-version: 22.14.0
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Build Angular app
         run: npm run build
 
       - name: Artifact upload
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           name: github-pages
           path: dist/cart-app/browser
