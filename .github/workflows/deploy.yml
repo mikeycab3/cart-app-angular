@@ -1,0 +1,41 @@
+name: Deploy Angular to FTP
+
+on:
+  push:
+    branches: ["develop"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22.14.0
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build Angular app
+        run: npm run build
+
+      - name: Artifact upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: dist/cart-app-angular/browser
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Github pages angular
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
