@@ -1,8 +1,16 @@
 <h2>Catalogo de productos App</h2>
-<app-catalog [products]="products"></app-catalog>
+<div class="row">
+  <div class="col-9">
+    <app-catalog [products]="products" (productEventEmitter)="onAddCart($event)"></app-catalog>
+  </div>
+  <div class="col-3">
+    @if (items.length > 0) {
+      <app-cart [items]="items" (idProductEventEmmiter)="onDelete($event)"
+      [total]="total"></app-cart>
+    } @else {
+      <div class="alert alert-warning">No hay elementos en el carro de compras</div>
+    }
+  </div>
+</div>
 
-@if (items.length > 0) {
-  <app-cart [items]="items"></app-cart>
-} @else {
-  <div class="alert alert-warning">No hay elementos en el carro de compras</div>
-}
+

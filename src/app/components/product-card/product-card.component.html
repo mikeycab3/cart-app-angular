@@ -3,6 +3,7 @@
         <h5 class="card-title">{{product.name}}</h5>
         <p class="card-title">{{product.description}}</p>
         <p class="card-title">{{product.price}}</p>
-        <button class="btn btn-success btn-sm">Agregar al carro</button>
+        <button class="btn btn-success btn-sm"
+        (click)="onAddCart(product)">Agregar al carro</button>
       </div>
     </div>
