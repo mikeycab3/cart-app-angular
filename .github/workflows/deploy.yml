@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build
+        run: npm run build -- --base-href=/cart-app/
 
       - name: Artifact upload
         uses: actions/upload-pages-artifact@v4
