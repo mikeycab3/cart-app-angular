@@ -1,4 +1,5 @@
-<h2>carro de compras</h2>
+<!-- <h2>carro de compras</h2> -->
+<div  class="">
 <table class="table table-hover table-striped">
   <thead>
     <tr>
@@ -12,7 +13,7 @@
   <tbody>
     @for (item of items; track $index) {
     <tr>
-      <td>{{item.product.name}}</td>
+      <td>{{item.product.title}}</td>
       <td>{{item.product.price}}</td>
       <td>{{item.quantity}}</td>
       <td>{{(item.product.price|| 0) * (item.quantity || 0)}}</td>
@@ -29,3 +30,4 @@
     </tr>
   </tfoot>
 </table>
+

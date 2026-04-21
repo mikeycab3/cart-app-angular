@@ -1,15 +1,16 @@
-import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { Product } from '../../models/product';
 import { ProductService } from '../../services/product.service';
 import { CatalogComponent } from '../catalog/catalog.component';
 import { CartComponent } from '../cart/cart.component';
 import { CartItems } from '../../models/cartItem';
 import { isPlatformBrowser } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cart-app',
   standalone: true,
-  imports: [CatalogComponent, CartComponent],
+  imports: [CatalogComponent, CartComponent, NavbarComponent],
   templateUrl: './cart-app.component.html',
   styleUrl: './cart-app.component.scss'
 })
@@ -19,14 +20,18 @@ export class CartAppComponent implements OnInit{
   items:CartItems[]=[];
   total:number = 0;
 
+
   productsService = inject(ProductService);
   platformId = inject(PLATFORM_ID);
 
   showCart:boolean = false;
+  @Output() closed = new EventEmitter<void>();
    constructor(){}
 
    ngOnInit(): void {
-     this.products = this.productsService.findAll();
+    this.productsService.findAll().subscribe(res=>{
+       this.products = res;
+     });
      if (isPlatformBrowser(this.platformId)) {
      this.items = JSON.parse(sessionStorage.getItem('cart')!) || [];
      }
@@ -65,6 +70,14 @@ export class CartAppComponent implements OnInit{
 
   saveSession(){
   sessionStorage.setItem('cart',JSON.stringify(this.items));
+  }
+
+  openCart(){
+    this.showCart = !this.showCart;
+  }
+
+  close(){
+    this.closed.emit();
   }
 }
 
