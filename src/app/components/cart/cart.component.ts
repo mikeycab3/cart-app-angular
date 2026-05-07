@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, input, Input, output, Output } from '@angular/core';
 import { CartItems } from '../../models/cartItem';
 
 @Component({
@@ -9,13 +9,13 @@ import { CartItems } from '../../models/cartItem';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent {
- @Input() items:CartItems[] = [];
- @Input() total = 0;
- @Output() idProductEventEmmiter = new EventEmitter();
+  items = input<CartItems[]>([]);
+  total = input<number>(0);
+  idProductEventEmmiter = output<number>();
 
 
 
- onDeleteCart(id:any){
-   this.idProductEventEmmiter.emit(id);
- }
+  onDeleteCart(id: any) {
+    this.idProductEventEmmiter.emit(id);
+  }
 }

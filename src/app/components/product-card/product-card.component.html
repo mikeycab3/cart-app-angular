@@ -1,11 +1,12 @@
-<div class="card  h-100 shadow-sm product-card">
+ <div class="card  h-100 shadow-sm product-card">
   <div class="img-container">
-    <img [src]="product.image" class="card-img-top product-img" alt="{{product.description}}">
+    <img [src]="product().image" class="card-img-top product-img" alt="{{product().description}}">
   </div>
   <div class="card-body d-flex flex-column">
-    <h5 class="card-title">{{product.title}}</h5>
-    <p class="card-text text-muted small">{{product.category}}</p>
-    <p class="fw-bold text-success mt-auto">{{product.price}}</p>
-    <button class="btn btn-success btn-sm mt-2 w-100" (click)="onAddCart(product)">Agregar al carro</button>
+    <h5 class="card-title">{{product().title}}</h5>
+    <p class="card-text text-muted small">{{product().category}}</p>
+    <p class="fw-bold text-success mt-auto">{{product().price}}</p>
+    <button class="btn btn-success btn-sm mt-2 w-100" (click)="onAddCart(product())">Agregar al carro</button>
   </div>
 </div>
+
