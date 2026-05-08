@@ -6,11 +6,13 @@ import { CartComponent } from '../cart/cart.component';
 import { CartItems } from '../../models/cartItem';
 import { isPlatformBrowser } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { LoaderService } from '../../services/loader/loader.service';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-cart-app',
   standalone: true,
-  imports: [CatalogComponent, CartComponent, NavbarComponent],
+  imports: [CatalogComponent, CartComponent, NavbarComponent,LoaderComponent],
   templateUrl: './cart-app.component.html',
   styleUrl: './cart-app.component.scss'
 })
@@ -22,6 +24,7 @@ export class CartAppComponent implements OnInit{
 
 
   productsService = inject(ProductService);
+  loaderService = inject(LoaderService);
   platformId = inject(PLATFORM_ID);
 
   showCart:boolean = false;
@@ -29,8 +32,10 @@ export class CartAppComponent implements OnInit{
    constructor(){}
 
    ngOnInit(): void {
-    this.productsService.findAll().subscribe(res=>{
+    this.productsService.findAll().subscribe({
+      next: (res) =>{
        this.products = res;
+       }
      });
      if (isPlatformBrowser(this.platformId)) {
      this.items = JSON.parse(sessionStorage.getItem('cart')!) || [];

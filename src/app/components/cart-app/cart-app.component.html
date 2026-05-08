@@ -1,7 +1,7 @@
+<app-loader></app-loader>
 <app-navbar [items]="items" (openEventEmitter)="openCart()"></app-navbar>
 <div class="container my-4">
   <h2>Catalogo de productos App</h2>
-  <!-- <button class="btn btn-info btn-sm" (click)="openCart()">Cart {{items.length}}</button> -->
     <div class="col-9 col-md-9">
       <app-catalog [products]="products" (productEventEmitter)="onAddCart($event)"></app-catalog>
     </div>

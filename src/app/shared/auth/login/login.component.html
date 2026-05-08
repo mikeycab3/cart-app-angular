@@ -1,1 +1,51 @@
-<p>login works!</p>
+<div class="login-container">
+  <div class="card shadow-lg p-4 login-card">
+
+    <h3 class="text-center mb-4">Iniciar Sesión</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="mb-3">
+        <label class="form-label label-black">Nombre Completo</label>
+        <input type="text" class="form-control" formControlName="fullname">
+      </div>
+
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label class="form-label label-black">Correo Electrónico</label>
+        <input type="email" class="form-control" formControlName="email"
+          [ngClass]="{'is-invalid': submitted && loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
+
+        <small class="text-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          El correo es obligatorio
+        </small>
+        <div *ngIf="loginForm.get('email')?.hasError('email')">
+          Formato de correo inválido
+        </div>
+      </div>
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label label-black">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" class="form-control"
+              [ngClass]="{'is-invalid': submitted && f['password'].invalid}">
+        <ng-container>
+          <small class="text-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            La contraseña es obliogatoria
+          </small>
+          <small *ngIf="f['password'].hasError('minlength')">
+            Mínimo 6 caracteres
+          </small>
+        </ng-container>
+      </div>
+
+      <!-- Botón -->
+      <div class="d-grid">
+        <button class="btn btn-primary btn-lg" [routerLink]="'/cartApp'">
+          Ingresar
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
