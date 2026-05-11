@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+##
+https://freeprojectapi.com/api.html
+https://www.youtube.com/watch?v=7V9I9_qwx74
+https://www.youtube.com/watch?v=-K1oTI9YFUk
+
+¿Por qué las Signals son el FUTURO de Angular? - #angular18
+https://www.youtube.com/watch?v=T6PrOOlNOIg
+
+Inicio de sesión y registro en Angular 19 | Guía para principiantes sobre autenticación de usuarios
+https://www.youtube.com/watch?v=i5bwLDWXnG4&list=PL7JmcZV0UQtVNlr8JrjNWzLPtVMjGH_Z2&index=31
+
+Autorización con ROLES en Angular: Protege tu App como un Experto
+https://www.youtube.com/watch?v=fLjV_MzUkwA
+

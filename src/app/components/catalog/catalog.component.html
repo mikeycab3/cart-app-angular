@@ -1,5 +1,13 @@
+ <div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Buscar producto..."
+    [(ngModel)]="searchText">
+</div>
+
 <div class="row">
-  @for (product of products; track $index) {
+  @for (product of filteredProducts(); track $index) {
   <div class="col-4  my-2">
     <product-card [product]="product" (producteventemmiter)="onAddCart($event)"></product-card>
   </div>
