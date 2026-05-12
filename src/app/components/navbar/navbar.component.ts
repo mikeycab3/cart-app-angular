@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CartItems } from '../../models/cartItem';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCartShopping, faHeart, faMagnifyingGlass, faUser, faBars } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from '../../services/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -18,9 +20,16 @@ export class NavbarComponent {
   faMenu = faBars;
   @Input() items: CartItems [] = [];
   @Output() openEventEmitter = new EventEmitter();
+  private userService = inject(UserService);
+  private router = inject(Router);
 
   openCart(): void {
     this.openEventEmitter.emit();
+  }
+
+  logoutUser(): void {
+    this.userService.logout();
+    this.router.navigate(['/lading-page']);
   }
 
 

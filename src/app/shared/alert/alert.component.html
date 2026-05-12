@@ -1,0 +1,12 @@
+@if (alertService.alert()) {
+
+<div
+  class="alert position-fixed top-0 end-0 m-3 shadow"
+  [ngClass]="'alert-' + alertService.alert()?.type"
+  style="z-index: 9999; width: 300px;">
+
+  {{ alertService.alert()?.message }}
+
+</div>
+
+}

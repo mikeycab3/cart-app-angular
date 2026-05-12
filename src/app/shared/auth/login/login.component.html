@@ -1,3 +1,4 @@
+<app-alert></app-alert>
 <div class="login-container">
   <div class="card shadow-lg p-4 login-card">
     <h3 class="text-center mb-4">
@@ -40,7 +41,7 @@
       <!-- Botón -->
       <div class="d-grid mb-3">
         <button class="btn btn-primary btn-lg">
-          Ingresar
+          {{!isRegisterMode ? 'Iniciar Sesión' : 'Crear cuenta' }}
         </button>
       </div>
 

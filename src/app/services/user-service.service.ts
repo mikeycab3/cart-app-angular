@@ -39,4 +39,7 @@ export class UserService {
       return null;
     }
   }
+  isLoggedIn(): boolean {
+    return this.currentUserSignal() !== null;
+  }
 }
