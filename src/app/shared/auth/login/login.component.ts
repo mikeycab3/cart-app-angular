@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
 
       if (this.loginForm.invalid) {
         this.loginForm.markAllAsTouched();
-        return;
       }
 
       this.userService.registerUser(this.loginForm.value);

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-landing-pages',
@@ -9,5 +10,4 @@ import { RouterModule } from '@angular/router';
   styleUrl: './landing-pages.component.scss'
 })
 export class LandingPagesComponent {
-
 }

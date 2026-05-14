@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="container py-5 mt-5">
+  <h2 class="mb-4 fw-bold">
+    {{category}}
+  </h2>
+  <div class="row g-4">
+    @for(product of products; track product.id){
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <div class="img-container">
+          <img [src]="product.image" class="ccard-img-top product-img" height="250" style="object-fit: contain;">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            {{product.title}}
+          </h5>
+          <p class="fw-bold text-primary">
+            $ {{product.price}}
+          </p>
+          <button class="btn btn-success btn-sm mt-2 w-100">
+            Agregar al carrito
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</div>

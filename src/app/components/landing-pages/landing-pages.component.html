@@ -5,14 +5,8 @@
       Compra Online Smart
     </a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarContent"
-      aria-controls="navbarContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -78,7 +72,7 @@
         <div class="card benefit-card h-100 border-0 shadow-sm">
           <div class="card-body p-4 text-center">
             <div class="icon-circle mb-3">👥</div>
-            <h5 class="fw-bold">Gestión de empleados</h5>
+            <h5 class="fw-bold">Gestióna tu compras</h5>
             <p class="text-muted mb-0">
               Administra información del personal, contratos y expedientes en un solo lugar.
             </p>
@@ -90,7 +84,7 @@
         <div class="card benefit-card h-100 border-0 shadow-sm">
           <div class="card-body p-4 text-center">
             <div class="icon-circle mb-3">⏱️</div>
-            <h5 class="fw-bold">Control de asistencia</h5>
+            <h5 class="fw-bold">Aqui puedes vender tus productos</h5>
             <p class="text-muted mb-0">
               Supervisa entradas, salidas, retardos y ausencias con reportes automáticos.
             </p>
@@ -102,7 +96,7 @@
         <div class="card benefit-card h-100 border-0 shadow-sm">
           <div class="card-body p-4 text-center">
             <div class="icon-circle mb-3">📊</div>
-            <h5 class="fw-bold">Analítica de talento</h5>
+            <h5 class="fw-bold">Lo mas comprado</h5>
             <p class="text-muted mb-0">
               Toma decisiones estratégicas con métricas clave de desempeño y rotación.
             </p>
@@ -124,17 +118,18 @@
     </div>
 
     <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-6 col-lg-3" [routerLink]="['/category']" [queryParams]="{ category: 'men\'s clothing' }">
         <div class="module-box h-100">
-          <h5 class="fw-bold">Celulares y Telefonia</h5>
+          <h5 class="fw-bold">Ropa Caballero</h5>
           <p class="mb-0">
-            Publica vacantes, filtra candidatos y da seguimiento al proceso de selección.
+            No pierdas el estilo.
           </p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="module-box h-100">
+        <div class="module-box h-100" [routerLink]="['/category']" [queryParams]="{ category: 'electronics' }"
+          style="cursor: pointer;">
           <h5 class="fw-bold">Electrodomesticos</h5>
           <p class="mb-0">
             Calcula pagos, incidencias y genera reportes administrativos fácilmente.
@@ -143,19 +138,19 @@
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="module-box h-100">
-          <h5 class="fw-bold">Computacion</h5>
+        <div class="module-box h-100" [routerLink]="['/category']" [queryParams]="{ category: 'jewelery' }">
+          <h5 class="fw-bold">Joyeria</h5>
           <p class="mb-0">
-            Evalúa objetivos, competencias y progreso del personal con indicadores claros.
+            Joyeria por Excelencia.
           </p>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-3">
-        <div class="module-box h-100">
-          <h5 class="fw-bold">Belleza y cuidado personal</h5>
+        <div class="module-box h-100" [routerLink]="['/category']" [queryParams]="{ category: 'women\'s clothing' }">
+          <h5 class="fw-bold">Ropa Dama</h5>
           <p class="mb-0">
-            Organiza cursos, seguimiento y planes de desarrollo para cada colaborador.
+            Siempre pensando en tus preferencias.
           </p>
         </div>
       </div>
@@ -171,7 +166,7 @@
       <p class="mb-4">
         Aqui encontraras varidad de productos virtualmente.
       </p>
-      <a class="btn btn-light btn-lg px-4 fw-semibold"  [routerLink]="'/login'">
+      <a class="btn btn-light btn-lg px-4 fw-semibold" [routerLink]="'/login'">
         Bienvenido
       </a>
     </div>

@@ -4,8 +4,10 @@ import { LandingPagesComponent } from './components/landing-pages/landing-pages.
 import { LoginComponent } from './shared/auth/login/login.component';
 import { authGuard } from './guards/auth.guard';
 import { CartComponent } from './components/cart/cart.component';
+import { ShowPreviewProductsComponent } from './components/show-preview-products/show-preview-products.component';
 
 export const routes: Routes = [
+  {path:'category', component:ShowPreviewProductsComponent},
   {path:'cartApp', loadComponent:() =>
       import('./components/cart-app/cart-app.component')
       .then(c => c.CartAppComponent),

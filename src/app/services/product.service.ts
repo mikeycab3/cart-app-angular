@@ -15,4 +15,9 @@ export class ProductService {
   findAll(): Observable<Product[]>{
    return this.http.get<Product[]>(this.url);
   }
+
+  getProductsByCategory(category: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.url}/category/${category}`
+    );
+  }
 }
