@@ -10,6 +10,7 @@
     <ul class="navbar-nav ms-auto">
       <li class="nav-item active">
         <a class="nav-link" href="#">Home</a>
+        <fa-icon [icon]="faHome"></fa-icon>
       </li>
       <li class="nav-item">
         <button class="nav-link" href="#" (click)="openCart()" role="button">
@@ -18,7 +19,8 @@
         </button>
       </li>
       <li class="nav-item">
-        <button class="btn btn-danger" (click)="logoutUser()">
+        <button class="btn btn-outline-light rounded-pill px-3 py-2 d-flex align-items-center gap-2 logout-btn" (click)="logoutUser()">
+          <fa-icon [icon]="faLogout"></fa-icon>
           Cerrar Sesión
         </button>
       </li>

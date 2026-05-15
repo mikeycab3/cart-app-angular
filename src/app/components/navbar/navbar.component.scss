@@ -1,0 +1,11 @@
+.logout-btn{
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.logout-btn:hover{
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  transform: translateY(-2px);
+}
